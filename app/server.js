@@ -8,7 +8,7 @@ const server = express();
 const port = process.env.PORT || 3000;
 server.set('view engine', 'ejs');
 
-// DEFINITION DES LOCALISATION DE RECHERCHE DU SERVEUR
+// DEFINITION DES LOCALISATIONS DE RECUPERATION DU SERVEUR
 server.set('views', path.resolve(__dirname, '../views'));
 server.use(express.static('static'));
 server.use(router);
