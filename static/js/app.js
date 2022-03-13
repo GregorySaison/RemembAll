@@ -1,5 +1,6 @@
 const app = {
     game: [], // Définition d'un conteneur destiné a stocker les bonnes réponses de l'utilisateur
+    score: 0,
 
     init: () => {
         app.checkInput();
@@ -14,13 +15,13 @@ const app = {
         button.addEventListener('click', (e) => {
             e.preventDefault();
             const answer = userInput.value.toLowerCase(); // Stockage de la réponse entrée par l'utilisateur
-            console.log(answer);
     
             // VERIFICATION DE LA REPONSE DE L'UTILISATEUR
             cards.forEach((card) => { 
                 if (card.textContent.includes(answer) && app.game.includes(answer) === false) {
                     card.style.display = 'block';
                     app.game.push(answer);
+                    app.countScore();
                 }
     
                 if (app.game.length === 151) { 
@@ -28,6 +29,13 @@ const app = {
                 }
             })
         })
+    },
+
+    countScore: () => {
+        const counter = document.querySelector('.header__counter-score');
+
+        app.score++;
+        counter.innerHTML = app.score;
     }
 }
 
