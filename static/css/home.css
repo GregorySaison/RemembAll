@@ -99,3 +99,7 @@ body {
 .main__card-content--pic {
     width: 80%;
 }
+
+.main__card-content--title {
+    display: none;
+}
