@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemembAll</title>
+</head>
+<body>
+    <header class="header">
+        <img class="header__logo" src="./../img/logo.png">
+        <h1 class="header__counter">score : <span class="header__counter-score">0</span>/150</h1>
+        <form class="header__form">
+            <input class="header__form-searchbar" id="searchbar" type="text">
+            <button class="header__form-button" id="button">valider</button>
+        </form>
+    </header>
+    <main class="main">
+        <% for (let pokemon of pokeBase) { %>
+            <article class="main__card">
+                <div class="main__card-content">
+                    <img class="main__card-content--pic" src="<%= pokemon.pic %>" >
+                    <h1 class="main__card-content--title"><%= pokemon.name %></h1>
+                </div>
+            </article>
+        <% } %>
+    </main>
+</body>
+</html>
